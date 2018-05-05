@@ -32,7 +32,10 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::resource('roles', 'RoleController');
 
 	//Permission Resource Controller
-	Route::get('/assign-permission', 'PermissionController@assign_permission')->name('assign_permission_index');
+	//Route::get('/assign-permission', 'PermissionController@assign_permission')->name('assign_permission_index');
 	Route::post('/assign-permission', 'PermissionController@assign_permission_post')->name('assign-permission-post');
+	
+	Route::post('/assign-permission-del', 'PermissionController@assign_permission_del')->name('assign-permission-del');
+
 	Route::resource('permissions', 'PermissionController');	
 });

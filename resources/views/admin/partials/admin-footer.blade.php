@@ -242,6 +242,10 @@
 <script src="{{ asset('public/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('public/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
 
+
+<!-- Toaster Alert Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+      
 <!-- Custom JS -->
 <script src="{{ asset('public/js/custom.js') }}"></script>
 

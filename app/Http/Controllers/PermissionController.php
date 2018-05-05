@@ -157,4 +157,42 @@ class PermissionController extends Controller
     public function assign_permission(){
         return view('admin.permission.assignment');
     }
+
+    //Assign permission post ajax
+    public function assign_permission_post(Request $request){
+
+        //Check if Permission role already exists
+        $exists = DB::table('permission_role')->where('permission_id', $request->input('permission_id'))
+                    ->where('role_id', $request->input('role_id'))
+                    ->exists();
+        
+        if($exists){
+            return \Response::json(array('status' => 202, 'msg' => 'This Permission is already assigned to this Role.'));
+        }else{
+            $permission_assigned = DB::table('permission_role')->insert(
+                    ['permission_id' => $request->input('permission_id'), 
+                     'role_id' => $request->input('role_id')]
+                     );            
+        }
+
+        if($permission_assigned){
+            return \Response::json(array('status' => 200, 'msg' => 'Permission Successfully assigned'));
+        }else{
+            return \Response::json(array('status' => 204, 'msg' => 'Permission Couldnote assigned'));
+        }
+    }
+
+    //Deleting/unassignign permission Ajax
+    public function assign_permission_del(Request $request){
+
+        $delete_permission_role = DB::table('permission_role')->where('permission_id', $request->input('permission_id'))
+                    ->where('role_id', $request->input('role_id'))
+                    ->delete();
+
+        if($delete_permission_role){
+            return \Response::json(array('status' => 200, 'msg' => 'Permission Successfully revoked'));
+        }else{
+            return \Response::json(array('status' => 204, 'msg' => 'Permission Couldnot revoked'));
+        }      
+    }
 }

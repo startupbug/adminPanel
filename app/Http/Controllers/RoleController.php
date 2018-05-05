@@ -34,7 +34,7 @@ class RoleController extends Controller
         }
 
         $data['permissions'] = Permission::all();
-        //dd($data);
+
         return view('admin.role.index')->with($data); 
     }
 

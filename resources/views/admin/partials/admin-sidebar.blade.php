@@ -5,10 +5,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ asset('public/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+          <img src="{{ asset('public/dist/img/user2-160x160.png') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>Admin</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -208,7 +208,7 @@
           <ul class="treeview-menu">
             <li><a href="{{route('permissions.create')}}"><i class="fa fa-circle-o"></i> Add Permission</a></li>
             <li><a href="{{route('permissions.index')}}"><i class="fa fa-circle-o"></i> Permission Management</a></li>
-            <li><a href="{{route('assign_permission_index')}}"><i class="fa fa-circle-o"></i> Permission Assignment</a></li>            
+                  
           </ul>
         </li> 
 
