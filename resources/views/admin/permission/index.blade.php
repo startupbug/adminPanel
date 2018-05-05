@@ -43,7 +43,7 @@
                           <form id="deleteUser" action="{{route('permissions.destroy', ['id' => $permission->id])}}" method="post">
                             {{ method_field('DELETE') }}
                             <input type="hidden" name="_token" value="{{Session::token()}}">
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger btn_per">Delete</button>
                           </form>
                         </td>
                       </tr>                

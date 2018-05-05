@@ -40,11 +40,11 @@
                         <td>{{$user->email}}</td>
                         <td>{{$user->display_name}}</td>
                         <td><a href="{{route('users.edit', ['id' => $user->id])}}"><button type="button" class="btn btn-info">Edit</button></a>
-                        <a href="{{route('users.show', ['id' => $user->id])}}"><button type="button" class="btn btn-info">View</button></a>
+                        <a href="{{route('users.show', ['id' => $user->id])}}"><button type="button" class="btn btn-info f_view">View</button></a>
                         <form id="deleteUser" action="{{route('users.destroy', ['id' => $user->id])}}" method="post">
                           {{ method_field('DELETE') }}
                           <input type="hidden" name="_token" value="{{Session::token()}}">
-                          <button type="submit" class="btn btn-danger">Delete</button>
+                          <button type="submit" class="btn btn-danger f_btndel">Delete</button>
                         </form>
 
                         </td>

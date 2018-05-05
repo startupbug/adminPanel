@@ -1,0 +1,41 @@
+.f_btn {
+    float: right;
+}
+
+.f_btndel {
+    float: right;
+    margin-top: -33px;
+    margin-right: 80px !important;
+}
+
+.f_view {
+    margin-left: 19px;
+}
+
+.btn_per {
+    float: right;
+    margin-top: -34px;
+}
+
+.f_role {
+    float: right;
+    font-size: 10px;
+    padding: 9px;
+    margin-top: -34px;
+    margin-right: -11px;
+}
+
+.content-header small {
+    font-weight: 800 !important;
+}
+
+.f_cross {
+    float: none !important;
+    margin-left: 10px;
+}
+
+.f_permission {
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

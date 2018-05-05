@@ -44,7 +44,7 @@
                         @if(count($role->permissions) > 0)
                           <td>
                           @foreach($role->permissions as $permission)
-                            {{$permission->name}}<button type="button" class="close permissionDel" data-role="{{$role->id}}" data-url="{{route('assign-permission-del')}}" value="{{$permission->id}}"  aria-label="Close">
+                            {{$permission->name}}<button type="button" class="close permissionDel f_cross" data-role="{{$role->id}}" data-url="{{route('assign-permission-del')}}" value="{{$permission->id}}"  aria-label="Close">
                                   x
                                 </button>
                                 <br>
@@ -55,7 +55,7 @@
                         @endif
                         @if(isset($permissions))
                          <td>
-                          <select name="permission" class="permission">
+                          <select name="permission" class="permission f_permission">
                               @foreach($permissions as $permission)
                                <option data-role="{{$role->id}}" data-url="{{route('assign-permission-post')}}" value="{{$permission->id}}">{{$permission->display_name}}</option>
                               @endforeach
@@ -66,7 +66,7 @@
                           <form id="deleteUser" action="{{route('roles.destroy', ['id' => $role->id])}}" method="post">
                             {{ method_field('DELETE') }}
                             <input type="hidden" name="_token" value="{{Session::token()}}">
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger f_role">Delete</button>
                           </form>
                         </td>
                       </tr>                

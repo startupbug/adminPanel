@@ -35,6 +35,10 @@
   <link rel="stylesheet" href="{{ asset('public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
   <!-- Toastr CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" rel="stylesheet">
+
+  <!-- Custom Style CSS -->
+  <link href="{{ asset('public/css/style.css') }}" rel="stylesheet">
+
   <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('public/plugins/datatables/dataTables.bootstrap.css') }}">
 
@@ -79,7 +83,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="{{ asset('public/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                        <img src="{{ asset('public/dist/img/user2-160x160.png') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -261,13 +265,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ asset('public/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
+              <img src="{{ asset('public/dist/img/user2-160x160.png') }}" class="user-image" alt="User Image">
               <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{ asset('public/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                <img src="{{ asset('public/dist/img/user2-160x160.png') }}" class="img-circle" alt="User Image">
 
                 <p>
                   Alexander Pierce - Web Developer
