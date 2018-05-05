@@ -1,0 +1,136 @@
+There has been big changes after version 1.8 due to changes in wordpress core. If you are
+using old version , then follow these steps -
+
+1. Upload latest limitless theme
+2. In the zip file you have downloaded from themeforest, there is a plugin in plugin folder limitless
+compatibility , upload it. Activate the plugin.
+3. Once activated there will be a admin menu limitless compatibility , click on it and once the page has
+been opened , click run.
+4. Now content will be updated to latest version of limitless.
+
+
+Version 2.5.7    2016-08-04		
+-----------------------------------------
+
+- Added Woo Commerce 2.6.3 Compatibility 
+- Fixed Engima Styler
+- Minor Bug fixes
+
+
+Version 2.5.6     2016-04-02 21:45:00 +0530
+----------------------------------------
+
+- Added Woo Commerce 2.5.5 Compatiblity
+- Added Latest Revolution slider
+- Added Latest Layered SLider
+- Added Auto Update enabled
+
+
+
+Version 2.5.5     2016-02-03 11:47:33 +0530
+----------------------------------------
+
+- Fixed Live Editor Bugs
+- Added latest WordPress Compatibility
+- Added latest Woo Commerce Support
+
+
+Version 2.5.1 - Maintainence Update
+----------------------------------------
+
+
+- Updated revslider.zip
+
+Version 2.5.1 
+----------------------------------------
+
+Builder Column selector bug fixed - file changed Limitless/ backend / css / rad_page_builder.css
+
+Version 2.5 - 08-03-15
+----------------------------------------
+
+1. Woo Commerce 2.3.5 compatibility
+2. Live Styler bug fixes
+3. Minor bug fixes
+
+Version 2.4 - 22-1-15
+----------------------------------------
+
+- Better WPML Compatibility
+- CSS Styling resetting bug fixed
+- Latest Woo Commerce update
+- Boxed layout bug fixed
+- Latest revolution slider and layered slider added
+- Updated theme to latest woo commerce
+- Styles resetting bug fixed
+- Better WPML compatibility
+- Minor Bug fixes
+- Live styler fixed
+- Live editor improvements
+
+
+Update1.8 - 27/3/2014 
+----------------------------------------
+
+
+1. Improved Sticky sidebar code 
+2. Woocommerce 2.1.x supported added
+3. Fixed nonce import bug
+
+Files/Folder changed - 
+
+1. sprites / stylesheets / layout.css
+2. sprites / js / custom.js
+3. sprites / js / ext.js
+4. backend / helper.php
+5. backend / js / global.js
+
+
+Update 1.7.9 
+----------------------------------------
+
+
+1. Fixed RAD Builder text bugs.</li>
+2. Fixed tabs icons problem</li>
+3. Added Use of WP Rich Text editor in tabs and accordion
+4. Unlimited widgets supported added in header constructor
+5. Latest Revolution Slider added</li>
+6. RAD widgets appear just below content in single posts.
+
+
+
+Version 1.5.3     2015-08-20 14:54:16 +0530
+----------------------------------------
+
+WordPress 4.3 Compatibility
+Woo Commerce 4.4 Compatibility
+
+
+limitless/backend/classes/class_radunit.php
+limitless/backend/classes/hypermenu.php
+limitless/backend/js/rad_page_builder.js
+
+limitless/backend/rad_builder/class_radpagebuilder.php
+
+limitless/backend/rad_builder/rad_shortcodes.php
+
+limitless/backend/theme_widgets.php
+
+limitless/style.css
+
+limitless/templates/rad/gallery.php
+
+limitless/templates/rad/section.php
+
+limitless/woocommerce/content-product.php
+
+limitless/woocommerce/content-product_cat.php
+
+limitless/woocommerce/loop-shop.php
+
+limitless/woocommerce/order/order-details-customer.php
+
+limitless/woocommerce/order/order-details.php
+
+limitless/woocommerce/single-product/tabs/tabs.php
+
