@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 /* Admin Panel Routes */
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin',  'middleware' => 'isAdmin'], function () {
 
 	//User Home page.
 	Route::get('/', 'AdminController@index')->name('admin-index');
@@ -32,10 +32,17 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::resource('roles', 'RoleController');
 
 	//Permission Resource Controller
-	//Route::get('/assign-permission', 'PermissionController@assign_permission')->name('assign_permission_index');
 	Route::post('/assign-permission', 'PermissionController@assign_permission_post')->name('assign-permission-post');
 	
 	Route::post('/assign-permission-del', 'PermissionController@assign_permission_del')->name('assign-permission-del');
 
-	Route::resource('permissions', 'PermissionController');	
+	Route::resource('permissions', 'PermissionController');
+
 });
+
+	//Admin Login Authentication
+	Route::get('/login', 'AuthController@login_index')->name('login_index');
+	Route::post('/login', 'AuthController@login_post')->name('login_post');
+
+	//Logout	
+	Route::get('/logout', 'AuthController@logout')->name('logout');

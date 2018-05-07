@@ -110,9 +110,10 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-       try{
+       try{ 
             //Creating new User
             $role = $this->role::find($id);
+            
             $role->name = $request->input('name');
             $role->display_name = $request->input('display_name');
             $role->description = $request->input('description');
@@ -147,10 +148,11 @@ class RoleController extends Controller
             //Deleting user of this Role
             $role_user_delete = User::join('role_user', 'users.id','=', 'role_user.user_id')->where('role_user.role_id', $role_user->id)->delete();
 
+            //deleting permission role with this role id.
+            $permission_role_delete = DB::table('permission_role')->where('role_id', $id)->delete();
+
             //Delete Role            
             $role_delete = $role->delete();
-
-
             
             if($role_delete){
                 $this->set_session('Role Deleted.', true);

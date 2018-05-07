@@ -54,7 +54,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{route('admin-index')}}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -71,10 +71,10 @@
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+         <!--    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
               <span class="label label-success">4</span>
-            </a>
+            </a> -->
             <ul class="dropdown-menu">
               <li class="header">You have 4 messages</li>
               <li>
@@ -148,10 +148,10 @@
           </li>
           <!-- Notifications: style can be found in dropdown.less -->
           <li class="dropdown notifications-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
               <span class="label label-warning">10</span>
-            </a>
+            </a> -->
             <ul class="dropdown-menu">
               <li class="header">You have 10 notifications</li>
               <li>
@@ -190,10 +190,10 @@
           </li>
           <!-- Tasks: style can be found in dropdown.less -->
           <li class="dropdown tasks-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<!--             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
               <span class="label label-danger">9</span>
-            </a>
+            </a> -->
             <ul class="dropdown-menu">
               <li class="header">You have 9 tasks</li>
               <li>
@@ -264,24 +264,31 @@
           </li>
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ asset('public/dist/img/user2-160x160.png') }}" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
-            </a>
+ 
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="{{ asset('public/dist/img/user2-160x160.png') }}" class="user-image" alt="User Image">
+                <span class="hidden-xs">   
+                  @if(Auth::check())
+                    {{Auth::user()->name}}
+                  @endif    </span>
+              </a>
+
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
                 <img src="{{ asset('public/dist/img/user2-160x160.png') }}" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                @if(Auth::check())
+                  {{Auth::user()->name}} - Admin
+                @endif                  
+<!--                   <small>Member since Nov. 2012</small> -->
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="row">
-                  <div class="col-xs-4 text-center">
+<!--                   <div class="col-xs-4 text-center">
                     <a href="#">Followers</a>
                   </div>
                   <div class="col-xs-4 text-center">
@@ -289,18 +296,20 @@
                   </div>
                   <div class="col-xs-4 text-center">
                     <a href="#">Friends</a>
-                  </div>
+                  </div> -->
                 </div>
                 <!-- /.row -->
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
+                @if(Auth::check())              
+                  <div class="pull-left">
+                    <a href="{{route('logout')}}" class="btn btn-default btn-flat">Sign out</a>
+                  </div>
+                @endif    
+<!--                 <div class="pull-right">
                   <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                </div>
+                </div> -->
               </li>
             </ul>
           </li>
@@ -312,5 +321,8 @@
       </div>
     </nav>
   </header>
+  @if(!isset($login))
+    @include('admin.partials.admin-sidebar')
+  @endif
 
-  @include('admin.partials.admin-sidebar')
+  
