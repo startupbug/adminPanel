@@ -4,8 +4,9 @@
 
 .f_btndel {
     float: right;
-    margin-top: -33px;
-    margin-right: 80px !important;
+    position: absolute;
+    top: 54px;
+    right: 14%;
 }
 
 .f_view {
