@@ -18,7 +18,7 @@ class AdminPermissionSeeder extends Seeder
 
 	    foreach($permission_array as $permission){
 
-	        $perm_inserted = DB::table('permissions')->insert([
+	        $perm_inserted = DB::table('permissions')->insertGetId([
 	            'name' => $permission,
 	            'display_name' => str_replace('-', ' ', $permission),
 	            'description' => str_replace('-', ' ', $permission),

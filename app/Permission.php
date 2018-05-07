@@ -16,4 +16,8 @@ class Permission extends EntrustPermission
         return $this->where('id', $id)
                     ->first();		
 	}
+
+	public function storePermission($request){
+
+	}
 }

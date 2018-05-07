@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 /* Admin Panel Routes */
-Route::group(['prefix' => 'admin',  'middleware' => 'isAdmin'], function () {
+Route::group(['prefix' => 'admin'], function () {
 
 	//User Home page.
 	Route::get('/', 'AdminController@index')->name('admin-index');
