@@ -40,3 +40,29 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.f_login {
+    margin-left: 16%;
+}
+
+
+
+.f_loginbtn {
+    text-align: center;
+}
+
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+    background-color: #ecf0f5;
+}
+
+
+.content-wrapper, .right-side {
+    min-height: 100%;
+    background-color: #ecf0f5;
+    z-index: 800;
+}
+
+.content-header h1 {
+    /* text-align: center; */
+    margin-left: 35%;
+}

@@ -14,7 +14,7 @@
     <!-- Main content -->
         <section class="content">
      <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 f_login">
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
@@ -40,7 +40,7 @@
 
                 <div class="box-footer">
                   <input type="hidden" name="_token" value="{{Session::token()}}">
-                  <button type="submit" class="btn btn-primary">Login</button>
+                  <div class="f_loginbtn"><button type="submit" class="btn btn-primary">Login</button></div>
                 </div>
               </form>
           </div>

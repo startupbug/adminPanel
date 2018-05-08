@@ -2,7 +2,7 @@
 
     $('#userTable').DataTable();
 
-//$( document ).ready(function() {
+
 
 	//Permission Addition to Role Ajax request
 	$(".permission").on("change", function(e){
@@ -69,4 +69,7 @@
 		});
 
 	});
-//});
+
+$( document ).ready(function() {
+	CKEDITOR.replace( 'editor1' );
+});

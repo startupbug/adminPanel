@@ -1,5 +1,5 @@
   <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+  <aside class="main-sidebar" @if(!isset($login)) style="background-color:#222d32" @endif>
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
@@ -27,7 +27,7 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <!-- Permissions -->
-
+     @if(Auth::check())
       @if(Auth::user()->can('can-see-permission') || Auth::user()->can('can-all-permission') || Auth::user()->can('access-all') || Auth::user()->can('can-del-permission') || Auth::user()->can('can-edit-permission'))
 
         <li class="treeview">
@@ -75,8 +75,23 @@
             <li><a href="{{route('users.create')}}"><i class="fa fa-circle-o"></i> Add User</a></li>
             <li><a href="{{route('users.index')}}"><i class="fa fa-circle-o"></i> User Management</a></li>
           </ul>
-        </li>        
+        </li>  
 
+        <!-- Pages -->
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-share"></i> <span>Pages</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('pages.create')}}"><i class="fa fa-circle-o"></i> Add Page</a></li>
+            <li><a href="{{route('pages.index')}}"><i class="fa fa-circle-o"></i> Page Management</a></li>
+          </ul>
+        </li>   
+
+    @endif
       </ul>
     </section>
     <!-- /.sidebar -->

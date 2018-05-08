@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 /* Admin Panel Routes */
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 	//User Home page.
 	Route::get('/', 'AdminController@index')->name('admin-index');
@@ -38,6 +38,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 	Route::resource('permissions', 'PermissionController');
 
+	/* Pages resource */
+	Route::resource('pages', 'PageController');	
 });
 
 	//Admin Login Authentication

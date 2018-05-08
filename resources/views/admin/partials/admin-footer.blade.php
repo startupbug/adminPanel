@@ -249,6 +249,14 @@
 <!-- Custom JS -->
 <script src="{{ asset('public/js/custom.js') }}"></script>
 
+<!-- ckeditor JS -->
+<script src="{{ asset('public/js/ckeditor.js') }}"></script>
+
+<script>
+  
+   CKEDITOR.replace( 'editor1' );
+   
+</script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('public/dist/js/demo.js') }}"></script>
 </body>
