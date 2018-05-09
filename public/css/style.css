@@ -42,7 +42,7 @@
 }
 
 .f_login {
-    margin-left: 16%;
+    margin-left: 25%;
 }
 
 
@@ -64,5 +64,30 @@
 
 .content-header h1 {
     /* text-align: center; */
-    margin-left: 35%;
+    margin-left: 45%;
+}
+
+.f_footer {
+    margin-left: auto !important;
+}
+.f_wrapper {
+    min-height: auto !important;
+}
+
+.admin_footer {
+    margin-left: 230px !important;
+}
+
+.login ~ .admin_footer {
+    margin-left: 0px !important;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+.login-content-wrapper {
+    margin-left: 0px !important;
+}
+.login-content {
+    min-height: 650px !important;
 }

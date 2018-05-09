@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="login-content-wrapper content-wrapper f_wrapper login">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -12,7 +12,7 @@
     </section>
 
     <!-- Main content -->
-        <section class="content">
+    <section class="content login-content">
      <div class="row">
         <div class="col-md-6 f_login">
           <!-- general form elements -->
@@ -45,13 +45,11 @@
               </form>
           </div>
           <!-- /.box -->
-
         </div>
-
     </div>
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
+<!-- /.content-wrapper -->
 
 @endsection
