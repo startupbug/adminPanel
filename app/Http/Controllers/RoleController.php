@@ -111,7 +111,7 @@ class RoleController extends Controller
     public function update(Request $request, $id)
     {
        try{ 
-            //Creating new User
+            //Editing Role
             $role = $this->role::find($id);
             
             $role->name = $request->input('name');

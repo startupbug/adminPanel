@@ -35,6 +35,20 @@
                       <textarea name="content" id="editor1" rows="10" cols="60"></textarea>
                 </div>
 
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Title</label>
+                      <input type="text" name="title" id="" rows="10" cols="60"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Meta</label>
+                      <input name="meta" id="" rows="10" cols="60"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Tags</label>
+                      <input name="tags" id="" rows="10" cols="60"></textarea>
+                </div>                                
     
 <!--            <div class="form-group">
                   <label for="exampleInputEmail1">Role Display name</label>

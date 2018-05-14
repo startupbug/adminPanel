@@ -50,6 +50,10 @@ class PageController extends Controller
             $page->heading = $request->input('heading');
             $page->content = $request->input('content');
 
+            $page->title = $request->input('title');
+            $page->meta = $request->input('meta');
+            $page->tags = $request->input('tags');
+
             if($page->save()){
 
                 $this->set_session('Page Successfully Added.', true);
@@ -98,7 +102,29 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       try{ 
+            //Editing Page
+            $page = $this->page::find($id);
+            
+            $page->heading = $request->input('heading');
+            $page->content = $request->input('content');
+
+            $page->title = $request->input('title');
+            $page->meta = $request->input('meta');
+            $page->tags = $request->input('tags');
+
+            if($page->save()){
+                $this->set_session('Page Successfully Edited.', true);
+            }else{
+                $this->set_session('Page couldnot be edited.', false);
+            }
+
+            return redirect()->route('pages.edit', ['id'=> $id]);
+
+        }catch(\Exception $e){
+            $this->set_session('Page Couldnot be Edited.'.$e->getMessage(), false);
+            return redirect()->route('pages.edit', ['id'=> $id]); 
+        }
     }
 
     /**
@@ -107,6 +133,7 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function destroy($id)
     {
         //Deleting Page
