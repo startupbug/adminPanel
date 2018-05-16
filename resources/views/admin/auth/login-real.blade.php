@@ -96,7 +96,7 @@
    <body class="hold-transition login-page">
       <div class="login-box">
          <div class="login-logo">
-            <a href="../../index2.html"><b>Admin</b>Panel</a>
+            <a href="../../index2.html"><b>Admin</b>KEBABQ</a>
          </div>
          <!-- /.login-logo -->
          <div class="card">
@@ -104,14 +104,10 @@
                <p class="login-box-msg">Sign in to start your session</p>
                <form id="signin_form" action="{{route('login_post')}}" method="post">
                   {{csrf_field()}}
-
                   <div class="imgcontainer">
                      <img src="{{ asset('public/dist/img/download.jpg') }}" alt="Avatar" class="avatar">
                   </div>
                   <div class="container">
-
-                    @include('admin.partials.error_section') 
-
                      <label for="uname"><b>Email</b></label>
                      <input type="text" placeholder="Enter Username" name="email" required>
                      <label for="psw"><b>Password</b></label>
