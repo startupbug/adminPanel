@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Role;
 use App\User;
+use Spatie\Activitylog\Models\Activity;
 
 class UserController extends Controller
 {
@@ -44,6 +45,8 @@ class UserController extends Controller
     public function store(Request $request)
     {
        try{
+            activity('import')->log('log something');
+            die();
             //Creating new User
             $user = $this->user;
             $user->name = $request->input('name');

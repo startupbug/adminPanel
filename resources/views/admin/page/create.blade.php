@@ -32,22 +32,23 @@
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Content</label>
-                      <textarea name="content" id="editor1" rows="10" cols="60"></textarea>
+                      <textarea name="content" class="form-control" id="editor1" rows="10" cols="60"></textarea>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Title</label>
-                      <input type="text" name="title" id="" rows="10" cols="60"></textarea>
+                      <input type="text" class="form-control" name="title" id="" rows="10" cols="60"></textarea>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Meta</label>
-                      <input name="meta" id="" rows="10" cols="60"></textarea>
+                      <input name="meta" class="form-control" id="" rows="10" cols="60"></textarea>
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Tags</label>
-                      <input name="tags" id="" rows="10" cols="60"></textarea>
+                  <label for="exampleInputEmail1">Description</label>
+                  <br>
+                      <textarea name="tags" class="form-control" id="editor2" rows="10" cols="60"></textarea>
                 </div>                                
     
 <!--            <div class="form-group">

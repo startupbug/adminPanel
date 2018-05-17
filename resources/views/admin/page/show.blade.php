@@ -13,25 +13,28 @@
 
     <!-- Main content -->
         <section class="content">
-     <div class="row">
-        <div class="col-md-12">
-          <!-- general form elements -->
+            <div class="row">
+              <div class="col-md-12">
+                <!-- general form elements -->
 
-              <h1 class="box-title">Page Details</h1>
+                    <h1 class="box-title">Page Details</h1>
 
-            <!-- /.box-header -->
-            <!-- form start -->
-            <h3>{{$page->heading}}</h3>
-              <br>
-            {{$page->content}}
+                  <!-- /.box-header -->
+                  <!-- form start -->
+                  <h3>{{$page->heading}}</h3>
+                    <br>
+                  {!!$page->content!!}
 
+                <b>Title:</b> {{$page->title}}
+                <br>
+                <b>Meta:</b> {{$page->meta}}
+                <br>            
+                <b>Description:</b> {{$page->tags}}
+                <br>
 
-          <!-- /.box -->
-
-        </div>
-
-    </div>
-    </section>
+              </div>
+            </div>
+        </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

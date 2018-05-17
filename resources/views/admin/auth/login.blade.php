@@ -84,11 +84,11 @@
          /* Change styles for span and cancel button on extra small screens */
          @media screen and (max-width: 300px) {
          span.psw {
-         display: block;
-         float: none;
+           display: block;
+           float: none;
          }
          .cancelbtn {
-         width: 100%;
+          width: 100%;
          }
          }
       </style>

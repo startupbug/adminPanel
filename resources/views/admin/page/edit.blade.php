@@ -26,6 +26,7 @@
             <form action="{{route('pages.update', ['id' => $page->id])}}"  method="post">
               {{ method_field('PUT') }}
               <div class="box-body">
+              
                 <div class="form-group">
                   <label for="exampleInputEmail1">Page Name</label>
                   <input type="text" class="form-control" name="heading" id="" placeholder="Enter Page name" value="{{$page->heading}}">
@@ -38,17 +39,18 @@
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Title</label>
-                      <input type="text" name="title" id="" value="{{$page->title}}" rows="10" cols="60"></textarea>
+                  <input type="text" name="title" id="" value="{{$page->title}}" rows="10" cols="60"></textarea>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Meta</label>
-                      <input name="meta" id="" rows="10" value="{{$page->meta}}" cols="60"></textarea>
+                  <input name="meta" id="" rows="10" value="{{$page->meta}}" cols="60"></textarea>
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Tags</label>
-                      <input name="tags" id="" rows="10" value="{{$page->tags}}" cols="60"></textarea>
+                  <label for="exampleInputEmail1">Description</label>
+                  <br>
+                  <textarea name="tags" class="form-control" id="editor4" rows="10" cols="60">{{$page->tags}}</textarea>                      
                 </div>              
 
 
