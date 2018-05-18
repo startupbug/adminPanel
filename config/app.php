@@ -179,6 +179,7 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         // JeroenNoten\LaravelCkEditor\ServiceProvider::class,
         Spatie\Activitylog\ActivitylogServiceProvider::class,
+        Spatie\Analytics\AnalyticsServiceProvider::class,
 
     ],
 
@@ -229,6 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
     ],
 
 ];

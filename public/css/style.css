@@ -1,3 +1,6 @@
+*{
+    font-family: 'Source Sans Pro',sans-serif;
+}
 .f_btn {
     float: right;
 }
@@ -62,11 +65,6 @@
     z-index: 800;
 }
 
-.content-header h1 {
-    /* text-align: center; */
-    margin-left: 45%;
-}
-
 .f_footer {
     margin-left: auto !important;
 }
@@ -90,4 +88,7 @@
 }
 .login-content {
     min-height: 650px !important;
+}
+.action-list a, .action-list form{
+    display: inline;
 }
