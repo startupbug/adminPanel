@@ -32,7 +32,8 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   $data['roles'] = Role::all();   
+    {   
+        $data['roles'] = Role::all();   
         return view('admin.user.create')->with($data);
     }
 
@@ -44,9 +45,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-       try{
-            activity('import')->log('log something');
-            die();
+       try{ 
+            $this->logActivity('User Added');
+
             //Creating new User
             $user = $this->user;
             $user->name = $request->input('name');
@@ -91,6 +92,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+              
         $data['roles'] = Role::all();
         $data['user'] = $this->user->getSingleUsers($id);
         return view('admin.user.edit')->with($data);
@@ -106,6 +108,9 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
        try{
+
+            $this->logActivity('User Edited');        
+            
             //Creating new User
             $user = $this->user::find($id);
             $user->name = $request->input('name');
@@ -140,6 +145,9 @@ class UserController extends Controller
     {
        //Deleting User
        try{
+
+            $this->logActivity('User deleted');
+
             $user = $this->user::find($id);
             $user = $user->delete();
             

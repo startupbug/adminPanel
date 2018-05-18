@@ -91,3 +91,8 @@
 .login-content {
     min-height: 650px !important;
 }
+.box-header>.box-tools {
+    position: absolute;
+    right: 10px;
+    top: -24%;
+}

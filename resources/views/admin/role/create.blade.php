@@ -14,7 +14,7 @@
     <!-- Main content -->
         <section class="content">
      <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">

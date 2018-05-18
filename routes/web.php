@@ -38,8 +38,25 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 	Route::resource('permissions', 'PermissionController');
 
-	/* Pages resource */
+	/* Pages resource */	Route::resource('pages', 'PageController');	
 	Route::resource('pages', 'PageController');	
+
+	/* Activity Log Routes */
+	Route::get('/activity-log', 'AdminController@activitylog_index')->name('activitylog_index');
+
+	/* Todo List Routes */
+	//Todo custom update
+	Route::post('/todos_update', 'admin\TodoController@todos_update')->name('todos_update');
+	
+	//Todo custom delete
+	
+	Route::post('/todos_delete', 'admin\TodoController@todos_delete')->name('todos_delete');
+
+	//Task done undone, change status
+	Route::post('/task_status', 'admin\TodoController@task_status')->name('task_status');
+
+	Route::resource('todos', 'admin\TodoController');
+
 });
 
 	//Admin Login Authentication

@@ -45,6 +45,9 @@ class PageController extends Controller
     public function store(Request $request)
     {
         try{
+
+            $this->logActivity('Page added');
+
             //Creating new User
             $page = $this->page;
             $page->heading = $request->input('heading');
@@ -102,7 +105,10 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-       try{ 
+       try{
+
+            $this->logActivity('Page edited');
+
             //Editing Page
             $page = $this->page::find($id);
             
@@ -137,7 +143,10 @@ class PageController extends Controller
     public function destroy($id)
     {
         //Deleting Page
+       
        try{
+            $this->logActivity('Page deleted');
+
             $page = Page::whereId($id);
             $page = $page->delete();
             

@@ -91,6 +91,27 @@
           </ul>
         </li>   
 
+        <!-- Activity Log -->
+        <li class="treeview">
+          <a href="{{route('activitylog_index')}}">
+            <i class="fa fa-share"></i> <span>Activity Log</span>
+          </a>
+        </li> 
+
+        <!-- Utilities -->
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-share"></i> <span>Utilities</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('todos.index')}}"><i class="fa fa-circle-o"></i> Todolist </a></li>
+            <li><a href="{{route('pages.index')}}"><i class="fa fa-circle-o"></i> Calendar </a></li>
+          </ul>
+        </li> 
+
     @endif
       </ul>
     </section>

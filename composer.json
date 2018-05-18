@@ -11,6 +11,7 @@
         "spatie/activitylog": "^2.4",
         "spatie/laravel-activitylog": "1.16.0",
         "spatie/laravel-analytics": "^3.6",
+        "spatie/laravel-google-calendar": "^2.2",
         "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {

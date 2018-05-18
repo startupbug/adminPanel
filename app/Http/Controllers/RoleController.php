@@ -57,6 +57,9 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         try{
+
+            $this->logActivity('Role Added');
+
             //Creating new User
             $role = $this->role;
             $role->name = $request->input('name');
@@ -111,6 +114,9 @@ class RoleController extends Controller
     public function update(Request $request, $id)
     {
        try{ 
+
+            $this->logActivity('Role updated');
+
             //Editing Role
             $role = $this->role::find($id);
             
@@ -142,6 +148,9 @@ class RoleController extends Controller
     {
         //Deleting Role
        try{
+
+            $this->logActivity('Role deleted');
+
             $role = Role::whereId($id);
             $role_user = $role->first();
 
