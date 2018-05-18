@@ -39,12 +39,12 @@
                         <td>{{$permission->name}}</td>
                         <td>{{$permission->display_name}}</td>
                         <td>{{$permission->description}}</td>
-                        <td>
-                         @if(Auth::user()->can('can-edit-permission') || Auth::user()->can('can-all-permission') || Auth::user()->can('access-all'))
+                        <td class="action-list">
+                         @if(Auth::user()->can(['can-edit-permission', 'can-all-permission', 'access-all']) )
                            <a href="{{route('permissions.edit', ['id' => $permission->id])}}"><button type="button" class="btn btn-info">Edit</button></a>                        
                          @endif 
 
-                         @if(Auth::user()->can('can-del-permission') || Auth::user()->can('can-all-permission') || Auth::user()->can('access-all'))
+                         @if(Auth::user()->can(['can-del-permission', 'can-all-permission', 'access-all']))
                          
                             <form id="deleteUser" action="{{route('permissions.destroy', ['id' => $permission->id])}}" method="post">
                               {{ method_field('DELETE') }}

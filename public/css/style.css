@@ -1,3 +1,6 @@
+*{
+    font-family: 'Source Sans Pro',sans-serif;
+}
 .f_btn {
     float: right;
 }
@@ -62,11 +65,6 @@
     z-index: 800;
 }
 
-.content-header h1 {
-    /* text-align: center; */
-    margin-left: 45%;
-}
-
 .f_footer {
     margin-left: auto !important;
 }
@@ -91,8 +89,13 @@
 .login-content {
     min-height: 650px !important;
 }
+<<<<<<< HEAD
 .box-header>.box-tools {
     position: absolute;
     right: 10px;
     top: -24%;
+=======
+.action-list a, .action-list form{
+    display: inline;
+>>>>>>> 1acc22c28eeac275047e563a63db80ff916f4fd0
 }

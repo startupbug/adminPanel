@@ -20,26 +20,23 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 	//User Home page.
-	Route::get('/', 'AdminController@index')->name('admin-index');
+	Route::get('/', 'Admin\AdminController@index')->name('admin-index');
 
 	//User management Route.
-	Route::get('/user-management', 'AdminController@usermanagement_index')->name('user-management');
+	Route::get('/user-management', 'Admin\AdminController@usermanagement_index')->name('user-management');
 
 	//User Resource Controller
-	Route::resource('users', 'UserController');
+	Route::resource('users', 'Admin\UserController');
 
 	//Role Resource Controller
-	Route::resource('roles', 'RoleController');
+	Route::resource('roles', 'Admin\RoleController');
 
 	//Permission Resource Controller
-	Route::post('/assign-permission', 'PermissionController@assign_permission_post')->name('assign-permission-post');
+	Route::post('/assign-permission', 'Admin\PermissionController@assign_permission_post')->name('assign-permission-post');
 	
-	Route::post('/assign-permission-del', 'PermissionController@assign_permission_del')->name('assign-permission-del');
+	Route::post('/assign-permission-del', 'Admin\PermissionController@assign_permission_del')->name('assign-permission-del');
 
-	Route::resource('permissions', 'PermissionController');
-
-	/* Pages resource */	Route::resource('pages', 'PageController');	
-	Route::resource('pages', 'PageController');	
+	Route::resource('permissions', 'Admin\PermissionController');
 
 	/* Activity Log Routes */
 	Route::get('/activity-log', 'AdminController@activitylog_index')->name('activitylog_index');
@@ -57,11 +54,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 	Route::resource('todos', 'admin\TodoController');
 
+
+	/* Pages resource */
+	Route::resource('pages', 'Admin\PageController');	
+
+	Route::get('analytics', 'Admin\AnalyticsController@analytics')->name('analytics');
+
+
 });
 
 	//Admin Login Authentication
-	Route::get('/login', 'AuthController@login_index')->name('login_index');
-	Route::post('/login', 'AuthController@login_post')->name('login_post');
+	Route::get('/login', 'Admin\AuthController@login_index')->name('login_index');
+	Route::post('/login', 'Admin\AuthController@login_post')->name('login_post');
 
 	//Logout	
-	Route::get('/logout', 'AuthController@logout')->name('logout');
+	Route::get('/logout', 'Admin\AuthController@logout')->name('logout');
