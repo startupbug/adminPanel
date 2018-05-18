@@ -180,6 +180,7 @@ return [
         // JeroenNoten\LaravelCkEditor\ServiceProvider::class,
         Spatie\Activitylog\ActivitylogServiceProvider::class,
         Spatie\Analytics\AnalyticsServiceProvider::class,
+        Spatie\GoogleCalendar\GoogleCalendarServiceProvider::class,
 
     ],
 
@@ -231,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
+        'GoogleCalendar' => Spatie\GoogleCalendar\GoogleCalendarFacade::class,
     ],
 
 ];
