@@ -157,7 +157,7 @@
             redraw: true
         });
     });
-    google.charts.load("visualization", "1", {packages:["geochart"], mapsApiKey: 'AIzaSyB32EUdME2LrYo5EQ4LPG2aGWWL8nYHStA'});
+    google.charts.load("visualization", "1", {packages:["geochart"], mapsApiKey: '{{  env('GOOGLE_MAPS_API_KEY') }}'});
     google.charts.setOnLoadCallback(drawRegionsMap);
     google.charts.setOnLoadCallback(drawLocalRegionsMap);
     function drawRegionsMap() {
