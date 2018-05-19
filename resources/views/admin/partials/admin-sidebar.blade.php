@@ -100,7 +100,7 @@
           </li>  
           @endif 
 
-<<<<<<< HEAD
+
         <!-- Activity Log -->
         <li class="treeview">
           <a href="{{route('activitylog_index')}}">
@@ -123,9 +123,7 @@
         </li> 
 
     @endif
-=======
-        @endif
->>>>>>> 1acc22c28eeac275047e563a63db80ff916f4fd0
+
       </ul>
     </section>
     <!-- /.sidebar -->

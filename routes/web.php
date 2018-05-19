@@ -54,7 +54,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 	Route::resource('todos', 'admin\TodoController');
 
-
 	/* Pages resource */
 	Route::resource('pages', 'Admin\PageController');	
 

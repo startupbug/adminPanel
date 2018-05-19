@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+//use App\Http\Controllers\Controller;
 use App\Todo;
 use Auth;
+
 
 class TodoController extends Controller
 {
@@ -43,6 +44,7 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
 
@@ -122,6 +124,7 @@ class TodoController extends Controller
 
     //Custom todo delete
     public function todos_delete(Request $request){
+
         $todo = Todo::find($request->input('taskId'));
         
         if($todo->delete()){
@@ -133,7 +136,7 @@ class TodoController extends Controller
 
     //Task done undone, change status
     public function task_status(Request $request){
-        //return $request->input();
+
         $todo = Todo::find($request->input('taskId'));
         
         if($request->input('checked')){
