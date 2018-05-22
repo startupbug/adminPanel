@@ -49,6 +49,8 @@ class PermissionController extends Controller
     {
         try{
             
+            $this->logActivity('Permission added');
+
             //Checking for Permission
             if( !(Auth::user()->can('can-add-permission') || Auth::user()->can('can-all-permission') 
                 || Auth::user()->can('access-all') ) ){
@@ -119,6 +121,9 @@ class PermissionController extends Controller
     {
 
         try{
+
+            $this->logActivity('Permission updated');
+
             //Checking for Permission
             if( !(Auth::user()->can('can-edit-permission') || Auth::user()->can('can-all-permission') || Auth::user()->can('access-all') )){
 
@@ -156,6 +161,8 @@ class PermissionController extends Controller
     {   
         //deleting Permissions
        try{
+
+            $this->logActivity('Permission deleted');
 
             //Checking for Permission
             if( !(Auth::user()->can('can-del-permission') || Auth::user()->can('can-all-permission') || Auth::user()->can('access-all') )){
@@ -203,6 +210,8 @@ class PermissionController extends Controller
     //Assign permission post ajax
     public function assign_permission_post(Request $request){
 
+        $this->logActivity('Permission assigned');
+
         //Checking for Permission
         if( !(Auth::user()->can('can-assign-permission') || Auth::user()->can('can-all-permission') || Auth::user()->can('access-all') )){
             
@@ -232,6 +241,8 @@ class PermissionController extends Controller
 
     //Deleting/unassignign permission Ajax
     public function assign_permission_del(Request $request){
+
+        $this->logActivity('Permission deleted');
 
         //Checking for Permission
         if( !(Auth::user()->can('can-delassign-permission') || Auth::user()->can('can-all-permission') || Auth::user()->can('access-all') )){

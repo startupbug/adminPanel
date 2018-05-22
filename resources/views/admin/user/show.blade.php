@@ -17,9 +17,10 @@
                 <!-- general form elements -->
                   <div class="box box-primary">
                     <ul>
-                      <li><b>Name:</b>{{ $user->name}}</li>
-                      <li><b>Email:</b>{{ $user->email}}</li>
-                      <li><b>Role:</b>{{ $user->display_name}}</li>
+                      <li><b>Name:</b> {{ $user->name}}</li>
+                      <li><b>Email:</b> {{ $user->email}}</li>
+                      <li><b>Role:</b> {{ $user->display_name}}</li>
+                      <li><b>Status:</b> {{ $user->status}}</li>
                     </ul> 
                   </div>
                 <!-- /.box -->

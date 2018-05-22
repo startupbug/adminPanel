@@ -16,7 +16,10 @@ class AuthController extends Controller
 
       try{
             if(Auth::attempt(['email' => $request->email, 'password' => $request->password ] )) {
+
+               $this->logActivity('Logged in');
 			         $this->set_session('Logged in', true);
+            
             }else{
             	$this->set_session('Invalid Email/Password', false);
             	return redirect()->route('login_index');

@@ -30,6 +30,7 @@
                       <th>Name</th>
                       <th>Email</th>
                       <th>Role</th>
+                      <th>Status</th>
                       <th>Action</th>                    
                     </tr>
                   </thead>
@@ -39,6 +40,7 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->display_name}}</td>
+                        <td>{{$user->status}}</td>
                         <td><a href="{{route('users.edit', ['id' => $user->id])}}"><button type="button" class="btn btn-info">Edit</button></a>
                         <a href="{{route('users.show', ['id' => $user->id])}}"><button type="button" class="btn btn-info f_view">View</button></a>
                         <form id="deleteUser" action="{{route('users.destroy', ['id' => $user->id])}}" method="post">

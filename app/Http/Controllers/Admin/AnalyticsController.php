@@ -11,7 +11,6 @@ use Analytics;
 class AnalyticsController extends Controller
 {
     //
-
 	protected $period;
 	protected $limit;
 	protected $country;

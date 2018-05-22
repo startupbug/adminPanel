@@ -1,4 +1,4 @@
-  <footer class="main-footer f_footer admin_footer">
+cd  <footer class="main-footer f_footer admin_footer">
     <strong>Copyright &copy; {{ date('Y') }} All rights
     reserved.
   </footer>
@@ -21,7 +21,7 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="{{ asset('public/bootstrap/js/bootstrap.min.js') }}"></script>
 <!-- Morris.js') }} charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="{{ asset('public/js/raphael-min.js') }}"></script>
 <script src="{{ asset('public/plugins/morris/morris.min.js') }}"></script>
 <!-- Sparkline -->
 <script src="{{ asset('public/plugins/sparkline/jquery.sparkline.min.js') }}"></script>
@@ -31,7 +31,7 @@
 <!-- jQuery Knob Chart -->
 <script src="{{ asset('public/plugins/knob/jquery.knob.js') }}"></script>
 <!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="{{ asset('public/js/moment.min.js') }}"></script> 
 <script src="{{ asset('public/plugins/daterangepicker/daterangepicker.js') }}"></script>
 <!-- datepicker -->
 <script src="{{ asset('public/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
@@ -52,7 +52,7 @@
 
 
 <!-- Toaster Alert Files -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="{{ asset('public/js/toastr.min.js') }}"></script>
       
 <!-- Custom JS -->
 <script src="{{ asset('public/js/custom.js') }}"></script>

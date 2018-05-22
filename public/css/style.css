@@ -89,6 +89,13 @@
 .login-content {
     min-height: 650px !important;
 }
+<<<<<<< HEAD
+.box-header>.box-tools {
+    position: absolute;
+    right: 10px;
+    top: -24%;
+=======
 .action-list a, .action-list form{
     display: inline;
+>>>>>>> 1acc22c28eeac275047e563a63db80ff916f4fd0
 }

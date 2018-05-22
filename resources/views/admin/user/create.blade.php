@@ -14,7 +14,7 @@
     <!-- Main content -->
         <section class="content">
      <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
@@ -45,6 +45,15 @@
                   <select name="user_role">
                     @foreach($roles as $role)
                      <option value="{{$role->id}}">{{$role->name}}</option>
+                    @endforeach
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Statuses</label>
+                  <select name="status_id">
+                    @foreach($statuses as $status)
+                     <option value="{{$status->id}}">{{$status->status}}</option>
                     @endforeach
                   </select>
                 </div>
