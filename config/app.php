@@ -178,9 +178,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         // JeroenNoten\LaravelCkEditor\ServiceProvider::class,
-        Spatie\Activitylog\ActivitylogServiceProvider::class,
         Spatie\Analytics\AnalyticsServiceProvider::class,
         Spatie\GoogleCalendar\GoogleCalendarServiceProvider::class,
+        Spatie\Backup\BackupServiceProvider::class,
 
     ],
 

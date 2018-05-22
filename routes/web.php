@@ -42,6 +42,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 	Route::resource('pages', 'Admin\PageController');	
 
 	Route::get('analytics', 'Admin\AnalyticsController@analytics')->name('analytics');
+	Route::get('calender', 'Admin\GoogleCalender@all_events')->name('all_events');
 });
 
 	//Admin Login Authentication
