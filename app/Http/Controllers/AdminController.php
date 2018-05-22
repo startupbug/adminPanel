@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Activity_log;
 use App\User;
+use DB;
 
 class AdminController extends Controller
 {

@@ -3,12 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notifiable;
 use App\Role;
 use App\User;
 use Spatie\Activitylog\Models\Activity;
+use App\Status;
+use App\Notifications\userNotify;
 
 class UserController extends Controller
 {
+
+    use Notifiable;
+
     /**
      * Display a listing of the resource.
      *
@@ -33,7 +39,9 @@ class UserController extends Controller
      */
     public function create()
     {   
-        $data['roles'] = Role::all();   
+        $data['roles'] = Role::all();
+        $data['statuses'] = Status::all();
+
         return view('admin.user.create')->with($data);
     }
 
@@ -53,11 +61,15 @@ class UserController extends Controller
             $user->name = $request->input('name');
             $user->email = $request->input('email');
             $user->password = bcrypt($request->input('password'));
+            $user->status_id = $request->input('status_id');
 
             if($user->save()){
                 //Assigning Role to User
                 $role = Role::find($request->input('user_role'));
                 $user->roles()->attach($role);
+
+                //Notify Test..
+                $user->notify(new userNotify($user));
 
                 $this->set_session('User Successfully Added.', true);
             }else{
@@ -94,6 +106,7 @@ class UserController extends Controller
     {
               
         $data['roles'] = Role::all();
+        $data['statuses'] = Status::all();
         $data['user'] = $this->user->getSingleUsers($id);
         return view('admin.user.edit')->with($data);
     }
@@ -116,6 +129,7 @@ class UserController extends Controller
             $user->name = $request->input('name');
             $user->email = $request->input('email');
             $user->password = bcrypt($request->input('password'));
+            $user->status_id = $request->input('status_id');
 
             if($user->save()){
                 //Assigning Role to User

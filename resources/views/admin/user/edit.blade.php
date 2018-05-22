@@ -50,6 +50,15 @@
                   </select>
                 </div>
 
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Statuses</label>
+                  <select name="status_id">
+                    @foreach($statuses as $status)
+                     <option value="{{$status->id}}" @if($status->id == $user->status_id) selected @endif>{{$status->status}}</option>
+                    @endforeach
+                  </select>
+                </div>
+
               </div>
               <!-- /.box-body -->
 

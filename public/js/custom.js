@@ -196,13 +196,16 @@
 
 
 	$(".toDoCheck").change(function() {
+	    
+	    var status;
 	    if(this.checked) {
+	    	status = 1;
 	    	$(this).siblings('span.text').css('text-decoration', 'line-through');
 	    	$(this).siblings('span.text').css('color', '#c9cbcf');
 	    	$(this).closest('li').find('.label-success').css('background-color', 'rgb(201, 203, 207)');
 	    }
 	    else{
-
+	    	status = 0;
 	    	$(this).siblings('span.text').css('text-decoration', 'none');
 	    	$(this).siblings('span.text').css('color', '#000');
 	    	$(this).closest('li').find('.label-success').css('background-color', '#00a65a');
@@ -215,8 +218,9 @@
 		$.ajax({
 		  type: "POST",
 		  url: $(this).data('url'),
-		  data: {'taskId': $(this).data('id'), 'checked' : this.checked},
+		  data: {'taskId': $(this).data('id'), 'checked' : status},
 		  success: function(data){
+		  	console.log(123);
 		  	console.log(data);
 		  	// $('#addTask').modal('toggle');
 
