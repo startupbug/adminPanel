@@ -10,9 +10,8 @@
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "pusher/pusher-php-server": "~2.6",
-        "spatie/activitylog": "^2.4",
-        "spatie/laravel-activitylog": "1.16.0",
         "spatie/laravel-analytics": "^3.6",
+        "spatie/laravel-backup": "^3.0.0",
         "spatie/laravel-google-calendar": "^2.2",
         "zizaco/entrust": "5.2.x-dev"
     },

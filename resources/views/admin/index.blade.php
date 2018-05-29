@@ -492,23 +492,25 @@
 
 @section('custom-script')
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script>
-    
-    google.charts.load("visualization", "1", {packages:["geochart"], mapsApiKey: '{{  env('GOOGLE_MAPS_API_KEY') }}'});
-    google.charts.setOnLoadCallback(drawRegionsMap);
-    function drawRegionsMap() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'country chart');
-        data.addColumn('number', 'visitors chart');
-        data.addRows({!! $country !!});
-        var options = {
-            colors:['#c8e0ed','#24536e'],
-            backgroundColor: '#f9f9f9',
-            datalessRegionColor: '#e5e5e5',
-            legend:  {textStyle: {fontName: 'Source Sans Pro'}}
-        };
-        var chart = new google.visualization.GeoChart(document.getElementById('world-map-dash'));
-        chart.draw(data, options);
-    }
-</script>
+@if(env('ANALYTICS_CONFIGURED') == true)
+  <script>
+      
+      google.charts.load("visualization", "1", {packages:["geochart"], mapsApiKey: '{{  env('GOOGLE_MAPS_API_KEY') }}'});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+      function drawRegionsMap() {
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'country chart');
+          data.addColumn('number', 'visitors chart');
+          data.addRows({!! $country !!});
+          var options = {
+              colors:['#c8e0ed','#24536e'],
+              backgroundColor: '#f9f9f9',
+              datalessRegionColor: '#e5e5e5',
+              legend:  {textStyle: {fontName: 'Source Sans Pro'}}
+          };
+          var chart = new google.visualization.GeoChart(document.getElementById('world-map-dash'));
+          chart.draw(data, options);
+      }
+  </script>
+@endif
 @endsection

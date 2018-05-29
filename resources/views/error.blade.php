@@ -1,0 +1,1 @@
+"please activate your google analytics"
