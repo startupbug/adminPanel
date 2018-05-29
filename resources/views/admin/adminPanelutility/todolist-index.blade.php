@@ -29,7 +29,6 @@
               <h3 class="box-title">To Do List</h3>
 
               <div class="box-tools pull-right">
-                  {{$todos->links()}}
 <!--                 <ul class="pagination pagination-sm inline">
 
                   <li><a href="#">&laquo;</a></li>
@@ -45,7 +44,7 @@
               <ul class="todo-list">
                @if(count($todos) > 0)
                   @foreach($todos as $todo)
-                      <li class="liTodo" @if($todo->status == 2) @endif>
+                      <li class="liTodo" id={{$todo->id}} @if($todo->status == 2) @endif>
                         <!-- drag handle -->
                             <span class="handle">
                               <i class="fa fa-ellipsis-v"></i>

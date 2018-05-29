@@ -24,7 +24,29 @@ $(function () {
     placeholder: "sort-highlight",
     handle: ".handle",
     forcePlaceholderSize: true,
-    zIndex: 999999
+    zIndex: 999999,
+    stop: function() {
+        $.map($(this).find('li'), function(el){
+            var itemId = el.id;
+            var itemIndex = $(el).index();
+
+            console.log("itemId:: " + itemId);
+            console.log("index:: " + itemIndex);
+
+            $.ajaxSetup({
+              headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') }
+            });
+
+
+            $.ajax({
+              url: 'http://localhost/generic_admin/admin/task_sort',
+              type: 'post',
+              dataType: 'json',
+              data: {'itemId': itemId, 'itemIndex': itemIndex},
+            });
+        });
+
+    }
   });
 
   //bootstrap WYSIHTML5 - text editor

@@ -116,10 +116,15 @@
 
 			  		setTimeout(function(){ 
 			  			location.reload();
-			  		}, 1200);
+			  		}, 600);
 
 		 		}else if(e.target.id == 'editTask'){
 		 			$("#myModalNormEdit").modal('toggle');
+		 			
+			  		setTimeout(function(){ 
+			  			location.reload();
+			  		}, 600);
+
 		 		}
 
 

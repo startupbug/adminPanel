@@ -45,13 +45,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 	//Todo custom update
 	Route::post('/todos_update', 'admin\TodoController@todos_update')->name('todos_update');
 	
-	//Todo custom delete
-	
+	//Todo custom delete	
 	Route::post('/todos_delete', 'admin\TodoController@todos_delete')->name('todos_delete');
 
 	//Task done undone, change status
 	Route::post('/task_status', 'admin\TodoController@task_status')->name('task_status');
 
+	//Task sorting
+	Route::post('/task_sort', 'admin\TodoController@task_sort')->name('task_sort');
+
+	/*Todo Resource*/
 	Route::resource('todos', 'admin\TodoController');
 
 	/* Pages resource */
