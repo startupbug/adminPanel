@@ -13,9 +13,10 @@ use App\Page;
 class AdminController extends Controller
 {
     public function index(){
-
-    	$analytics = new AnalyticsController;
-        
+        if(env('ANALYTICS_CONFIGURED') == TRUE){
+        	$analytics = new AnalyticsController;
+            $data['country'] = $analytics->getCountries();
+        }
         $data['usercount'] = User::all()->count();
         $data['today_usercount'] = User::whereDate('created_at', DB::raw('CURDATE()'))->count();
         $data['activitylogcount'] = Activity_log::all()->count();
@@ -25,7 +26,7 @@ class AdminController extends Controller
 
         $data['pagecount'] = Page::all()->count();
 
-    	return view('admin.index', ['country' => $analytics->getCountries()])->with($data);
+    	return view('admin.index')->with($data);
     }
 
     public function usermanagement_index(){
