@@ -1,0 +1,80 @@
+<div class="row">
+  <!-- Insert Form -->
+  <div class="col-lg-12 col-12">
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Add Role</h3>
+      </div>
+      <form  [formGroup]="roleForm" (ngSubmit)="onSubmit(roleForm)">
+        <div class="card-body">
+          <input type="hidden" class="form-control" id="id" placeholder="Enter ID" formControlName="id">
+          <div class="form-group">
+            <label for="name">Role Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter Role Name" formControlName="name">
+          </div>
+          <div class="alert alert-danger alert-dismissible" *ngIf="!roleForm.controls['name'].valid && roleForm.controls['name'].touched">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            {{ titleAlert }}
+          </div>
+          <div class="form-group">
+            <label for="display_name">Role Display name</label>
+            <input type="text" class="form-control" id="display_name" placeholder="Enter Role Display Name" formControlName="display_name">
+          </div>
+          <div class="alert alert-danger alert-dismissible" *ngIf="!roleForm.controls['display_name'].valid && roleForm.controls['display_name'].touched">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            {{ titleAlert }}
+          </div>
+          <div class="form-group">
+            <label for="description">Role Description</label>
+            <input type="text" class="form-control" id="description" placeholder="Enter Description" formControlName="description" >
+          </div>
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary"  [disabled]="!roleForm.valid"><i class="fa fa-save"></i> Submit</button>
+          <button type="button" class="btn" (click)="onReset()" ><i class="fa fa-refresh"></i> Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Data Table -->
+  <div class="col-lg-12 col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Role Information</h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table id="example2" class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Display Name</th>
+              <th>Description</th>
+              <th class="text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let role of roleList">
+              <td>{{ role.name }}</td>
+              <td>{{ role.display_name }}</td>
+              <td>{{ role.description }}</td>
+              <td class="text-center">
+                <a class="btn" (click)="onEdit(role)">
+                  <i class="fa fa-pencil-square-o"></i>
+                </a>
+                <a class="btn text-danger" (click)="onDelete(role)">
+                  <i class="fa fa-trash-o"></i>
+                </a>
+                <!-- <button type="button" class="btn btn-info" (ngClick)="onEdit('as' )">Edit</button>
+                <button type="button" class="btn btn-danger" (ngClick)="onDelete( role.id )">Delete</button> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  </div>
+</div>

@@ -17,14 +17,19 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { RegisterComponent } from './components/register/register.component';
 import { SiginComponent } from './components/sigin/sigin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-
 import { EmployeesComponent } from './components/crud/employees/employees.component';
 import { EmployeeComponent } from './components/crud/employees/employee/employee.component';
+import { RolesComponent } from './components/crud/roles/roles.component';
+import { RoleComponent } from './components/crud/roles/role/role.component';
+import { RoleManagementsComponent } from './components/crud/role-managements/role-managements.component';
+import { RoleManagementComponent } from './components/crud/role-managements/role-management/role-management.component';
 
 // Service
 import { BaseUrlService } from './services/base-url.service';
 import { UserService } from './services/user/user.service';
 import { EmployeesService } from './services/employee/employees.service';
+import { RoleService } from './services/role/role.service';
+import { RoleManagementService } from './services/role-management/role-management.service';
 
 // Guard
 import { AuthguardGuard } from './guards/authguard.guard';
@@ -45,6 +50,16 @@ const appRoutes: Routes =
     path: 'dashboard',
     canActivate: [AuthguardGuard],
     component: DashboardComponent
+  },
+  {
+    path: 'roles',
+    canActivate: [AuthguardGuard],
+    component: RolesComponent
+  },
+  {
+    path: 'role_management',
+    canActivate: [AuthguardGuard],
+    component: RoleManagementsComponent
   },
   {
     path: 'employee',
@@ -71,7 +86,11 @@ const appRoutes: Routes =
     PageNotFoundComponent,
     RegisterComponent,
     EmployeesComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    RolesComponent,
+    RoleComponent,
+    RoleManagementsComponent,
+    RoleManagementComponent
   ],
   imports: [
     CommonModule,
@@ -91,6 +110,8 @@ const appRoutes: Routes =
     BaseUrlService,
     UserService,
     EmployeesService,
+    RoleService,
+    RoleManagementService,
     AuthguardGuard
   ],
   bootstrap: [AppComponent]

@@ -137,7 +137,7 @@
         <img src="../../../assets/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="/dashboard" class="d-block">Alexander Pierce</a>
+        <a href="/dashboard" class="d-block">{{ currentUser.name }}</a>
       </div>
     </div>
 
@@ -151,9 +151,15 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="/employee" class="nav-link">
-            <i class="nav-icon fa fa-pie-chart"></i>
-            <p>Employee CRUD</p>
+          <a href="/roles" class="nav-link">
+            <i class="nav-icon fa fa-tasks"></i>
+            <p>Roles</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/role_management" class="nav-link">
+            <i class="nav-icon fa fa-users"></i>
+            <p>Role Management</p>
           </a>
         </li>
         <!-- <li class="nav-item has-treeview">

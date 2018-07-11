@@ -16,12 +16,19 @@ export class UserService {
   {
       this.httpClient.post(this.baseUrl.url()+'user-register', user).subscribe(
        res => {
-           localStorage.setItem('currentUser', JSON.stringify(res));
+         if(res['success']){
+           // console.log(JSON.stringify(res));
+           localStorage.setItem('currentUser', JSON.stringify(res['user']));
+           localStorage.setItem('token', res['token']);
            this.router.navigate(['/dashboard']);
-           this.toastr.success('New Record Added Successfully','User Register');
+           this.toastr.success(res['message'],'User Register');
+         }
+         else{
+           this.toastr.error(res['message'],'User Register');
+         }
        },
        err => {
-         this.toastr.error('Email Address and Password in Invalid','User');
+         this.toastr.error('Email Address and Password in Invalid','User Register');
        }
      );
   }
@@ -31,16 +38,15 @@ export class UserService {
       this.httpClient.post(this.baseUrl.url()+'user-login', user)
       .subscribe(
        res => {
-         if(res == "unauthorize"){
-           this.toastr.error('Email Address and Password in Invalid','User');
-         }
-         else
-         {
-           localStorage.setItem('currentUser', JSON.stringify(res));
+         if(res['success']){
+           localStorage.setItem('currentUser', JSON.stringify(res['user']));
+           localStorage.setItem('token', res['token']);
            this.router.navigate(['/dashboard']);
-           this.toastr.success('Login Successfully','User');
+           this.toastr.success(res['message'],'User');
          }
-
+         else{
+           this.toastr.error(res['message'],'User');
+         }
        },
        err => {
          this.toastr.error('Email Address and Password in Invalid','User');

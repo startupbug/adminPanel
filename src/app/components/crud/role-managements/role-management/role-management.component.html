@@ -1,0 +1,57 @@
+<div class="row">
+
+  <div class="col-lg-12 col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Roles List</h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table id="example2" class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Display Name</th>
+              <th>Description</th>
+              <th>Permission assignment</th>
+              <th>Assign Role</th>
+              <th class="text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let role of rolesList">
+              <td>{{ role.name }}</td>
+              <td>{{ role.display_name }}</td>
+              <td>{{ role.description }}</td>
+              <td>
+                <div *ngFor="let role_permission of role.permissions">
+                  {{ role_permission.name }}
+                </div>
+              </td>
+              <td>
+                <form [formGroup]="role_management_form">
+                  <select class="form-control" name="permission_id" formControlName="permission_id" (change)="onSubmit(role_management_form, role.id )">
+                    <option *ngFor="let permission_list of permissionsList" value="{{ permission_list.id }}">
+                      {{ permission_list.name }}
+                    </option>
+                  </select>
+                </form>
+              </td>
+              <td class="text-center">
+                <a class="btn" (click)="onEdit(role)">
+                  <i class="fa fa-pencil-square-o"></i>
+                </a>
+                <a class="btn text-danger" (click)="onDelete(role)">
+                  <i class="fa fa-trash-o"></i>
+                </a>
+                <!-- <button type="button" class="btn btn-info" (ngClick)="onEdit('as' )">Edit</button>
+                <button type="button" class="btn btn-danger" (ngClick)="onDelete( role.id )">Delete</button> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  </div>
+</div>

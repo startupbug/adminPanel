@@ -25,7 +25,7 @@ export class SiginComponent implements OnInit {
 
   onSubmit(value)
   {
-    this.userService.loginUser(value);
+    this.userService.loginUser(this.loginForm.value);
     this.loginForm.reset();
   }
 
