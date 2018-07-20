@@ -2,15 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RoleManagementService } from '../../../../services/role-management/role-management.service';
-
+declare var $;
 @Component({
   selector: 'app-role-management',
   templateUrl: './role-management.component.html',
   styleUrls: ['./role-management.component.css']
 })
+
 export class RoleManagementComponent implements OnInit {
 
-
+    permissionsList_id : any = [];
     permissionsList : any = [];
     rolesList : any = [];
     role_management_form: FormGroup;
@@ -25,7 +26,10 @@ export class RoleManagementComponent implements OnInit {
       });
 
       this.getData();
+
+      $('#example2').DataTable();
     }
+
 
     getData() {
       this.roleManagementService.roleManagemenData().subscribe((x: any) => {
@@ -55,7 +59,45 @@ export class RoleManagementComponent implements OnInit {
           this.toastr.error('Not Response');
         }
       );
-
     }
 
+    onDelete(value) {
+
+      this.roleManagementService.roleManagementDelete(value).subscribe(
+        res => {
+          if(res['success']){
+            this.toastr.error(res['message']);
+            this.getData();
+          }
+          else{
+            this.toastr.error(res['message']);
+          }
+        },
+        err => {
+          this.toastr.error('Not Response');
+        }
+      );
+    }
+
+    onPermission(value){
+      this.permissionsList_id = value;
+    }
+
+    onPermissionDelete(value) {
+      this.roleManagementService.rolePermissionDelete(value).subscribe(
+        res => {
+          console.log(res);
+          if(res['success']){
+            this.toastr.error(res['message']);
+            this.getData();
+          }
+          else{
+            this.toastr.error(res['message']);
+          }
+        },
+        err => {
+          this.toastr.error('Not Response');
+        }
+      );
+    }
 }

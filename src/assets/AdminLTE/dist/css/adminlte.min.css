@@ -19,3 +19,22 @@
 form .card-footer button{
   margin-right: 5px;
 }
+
+body.sidebar-mini.modal-open{
+  padding-right: 0 !important;
+}
+div.dataTables_wrapper>.row>.col-md-6:last-child {
+    text-align: right;
+}
+div.dataTables_wrapper>.row>.col-md-6:first-child label{
+  font-size: 13px;
+}
+div.dataTables_wrapper>.row>.col-md-6:first-child label select{
+    position: absolute;
+    width: 15%;
+    display: inline-block;
+}
+
+div.dataTables_wrapper>.row>.col-md-6:last-child label{
+    text-align: left;
+}

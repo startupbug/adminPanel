@@ -52,16 +52,13 @@
   <script src="assets/AdminLTE/plugins/chartjs-old/Chart.min.js"></script>
   <!-- PAGE SCRIPTS -->
   <!-- <script src="assets/AdminLTE/dist/js/pages/dashboard.js"></script> -->
+
   <script>
-    $(function () {
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false
-      });
+   $( document ).ready(function() {
+      setTimeout(function(){
+        $('#example2').DataTable();
+        $('#example3').DataTable();
+      }, 1000);
     });
   </script>
 </body>

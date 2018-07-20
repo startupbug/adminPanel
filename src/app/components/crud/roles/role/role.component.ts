@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RoleService } from '../../../../services/role/role.service';
-
+declare var $;
 
 @Component({
   selector: 'app-role',
@@ -25,6 +25,8 @@ export class RoleComponent implements OnInit {
       'description' : [null]
     });
     this.getData();
+
+    $('#example2').DataTable(); 
   }
 
   getData() {

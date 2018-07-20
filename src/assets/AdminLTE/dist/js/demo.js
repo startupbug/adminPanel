@@ -5,6 +5,8 @@
  * This file is for demo purposes only.
  */
 (function ($) {
+
+
   'use strict'
 
   var $sidebar   = $('.control-sidebar')

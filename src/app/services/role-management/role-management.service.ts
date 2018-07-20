@@ -19,4 +19,12 @@ export class RoleManagementService {
     return this.httpClient.post(this.baseUrl.url()+'role_permission/save', roleManagement);
   }
 
+  roleManagementDelete(roleManagement : RoleManagement) {
+    return this.httpClient.post(this.baseUrl.url()+'roles/delete', roleManagement);
+  }
+
+  rolePermissionDelete(roleManagement : RoleManagement) {
+    console.log(roleManagement);
+    return this.httpClient.post(this.baseUrl.url()+'role_permission/delete', roleManagement);
+  }
 }
